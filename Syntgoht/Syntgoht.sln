@@ -31,19 +31,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C63A1F7-ED8F-495E-BDF5-8725CCD56681}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://omninewb.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = Syntgoht\\Syntgoht.csproj
-		SccProjectName0 = Syntgoht
-		SccAuxPath0 = https://omninewb.visualstudio.com/defaultcollection
-		SccLocalPath0 = Syntgoht
-		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName1 = SyntgohtLoader\\SyntgohtLoader.csproj
-		SccProjectName1 = SyntgohtLoader
-		SccAuxPath1 = https://omninewb.visualstudio.com/defaultcollection
-		SccLocalPath1 = SyntgohtLoader
-		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-	EndGlobalSection
 EndGlobal

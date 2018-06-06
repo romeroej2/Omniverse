@@ -30,20 +30,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEC47C4C-B9E8-4B64-8470-C7332C41641E}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://omninewb.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = ATB\\ATB.csproj
-		SccProjectName0 = ATB
-		SccAuxPath0 = https://omninewb.visualstudio.com/defaultcollection
-		SccLocalPath0 = ATB
-		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName1 = ATBLoader\\ATBLoader.csproj
-		SccProjectName1 = ATBLoader
-		SccAuxPath1 = https://omninewb.visualstudio.com/defaultcollection
-		SccLocalPath1 = ATBLoader
-		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-	EndGlobalSection
+	EndGlobalSection	
 EndGlobal
