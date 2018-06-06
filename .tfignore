@@ -1,0 +1,130 @@
+﻿################################################################################
+# This .tfignore file was automatically created by Microsoft(R) Visual Studio.
+#
+# Local items matching filespecs in this file will not be added to version
+# control. This file can be checked in to share exclusions with others.
+#
+# Wildcard characters are * and ?. Patterns are matched recursively unless the
+# pattern is prefixed by the \ character.
+#
+# You can prepend a path to a pattern to make it more specific. If you do,
+# wildcard characters are not permitted in the path portion.
+#
+# The # character at the beginning of a line indicates a comment.
+#
+# The ! prefix negates a pattern. This can be used to re-include an item after
+# it was excluded by a .tfignore file higher in the tree, or by the Team
+# Project Collection's global exclusions list.
+#
+# The / character is interpreted as a \ character on Windows platforms.
+#
+# Examples:
+#
+#  # Excludes all files ending in .txt in Alpha\Beta and all its subfolders.
+#  Alpha\Beta\*.txt
+#
+#  # Excludes all files ending in .cpp in this folder only.
+#  \*.cpp
+#
+#  # Excludes all files ending in .cpp in this folder and all subfolders.
+#  *.cpp
+#
+#  # If "Contoso" is a folder, then Contoso and all its children are excluded.
+#  # If it is a file, then only the "Contoso" in this folder is excluded.
+#  \Contoso
+#
+#  # If Help.exe is excluded by a higher .tfignore file or by the Team Project
+#  # Collection global exclusions list, then this pattern re-includes it in
+#  # this folder only.
+#  !\Help.exe    
+#
+################################################################################
+
+\SVN
+\Kefka\Builds
+\ATB\Builds
+\Switcharoo\Builds
+\Boko\Builds
+\.vs\slnx.sqlite
+\.vs\VSWorkspaceState.json
+\Boko\.vs\config\applicationhost.config
+\.vs\ProjectSettings.json
+\ATB\packages\RestSharp.105.2.3\readme.txt
+\ATB\packages\RestSharp.105.2.3\RestSharp.105.2.3.nupkg
+\ATB\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\MonoTouch10\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\net35\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\net4\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\net45\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\net451\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\net452\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\net46\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\net4-client\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\sl5\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\windowsphone8\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\windowsphone81\RestSharp.xml
+\ATB\packages\RestSharp.105.2.3\lib\Xamarin.iOS10\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\readme.txt
+\Boko\packages\RestSharp.105.2.3\RestSharp.105.2.3.nupkg
+\Boko\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\MonoTouch10\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\net35\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\net4\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\net45\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\net451\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\net452\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\net46\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\net4-client\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\sl5\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\windowsphone8\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\windowsphone81\RestSharp.xml
+\Boko\packages\RestSharp.105.2.3\lib\Xamarin.iOS10\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\readme.txt
+\Kefka\packages\RestSharp.105.2.3\RestSharp.105.2.3.nupkg
+\Kefka\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\MonoTouch10\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\net35\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\net4\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\net45\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\net451\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\net452\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\net46\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\net4-client\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\sl5\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\windowsphone8\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\windowsphone81\RestSharp.xml
+\Kefka\packages\RestSharp.105.2.3\lib\Xamarin.iOS10\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\readme.txt
+\Switcharoo\packages\RestSharp.105.2.3\RestSharp.105.2.3.nupkg
+\Switcharoo\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\MonoTouch10\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\net35\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\net4\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\net45\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\net451\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\net452\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\net46\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\net4-client\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\sl5\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\windowsphone8\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\windowsphone81\RestSharp.xml
+\Switcharoo\packages\RestSharp.105.2.3\lib\Xamarin.iOS10\RestSharp.xml
+\Syntgoht\Builds\Syntgoht.nrproj
+\Syntgoht\Builds\Syntgoht.zip
+\Syntgoht\Builds\Syntgoht\SyntgohtLoader.cs
+\Syntgoht\Builds\Syntgoht\version.txt
+\Syntgoht\packages\RestSharp.105.2.3\readme.txt
+\Syntgoht\packages\RestSharp.105.2.3\RestSharp.105.2.3.nupkg
+\Syntgoht\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\MonoTouch10\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\net35\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\net4\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\net45\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\net451\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\net452\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\net46\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\net4-client\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\sl5\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\windowsphone8\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\windowsphone81\RestSharp.xml
+\Syntgoht\packages\RestSharp.105.2.3\lib\Xamarin.iOS10\RestSharp.xml

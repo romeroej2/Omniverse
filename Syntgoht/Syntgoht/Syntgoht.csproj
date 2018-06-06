@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDBE520A-AAB4-4668-9C16-CE0A26B1A4D9}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Syntgoht</RootNamespace>
+    <AssemblyName>Syntgoht</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AssemblyInfoFilePath>
+    </AssemblyInfoFilePath>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GreyMagic">
+      <HintPath>Libraries\GreyMagic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="RebornBuddy">
+      <HintPath>Libraries\RebornBuddy.exe</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Siune.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Siune.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TrelloNet">
+      <HintPath>Libraries\TrelloNet.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AwaitableDelegateCommand.cs" />
+    <Compile Include="Commands\AwaitableDelegateCommandT.cs" />
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\DelegateCommandT.cs" />
+    <Compile Include="Commands\IAsyncCommand.cs" />
+    <Compile Include="Commands\IAsyncCommandT.cs" />
+    <Compile Include="Commands\IRaiseCanExecuteChanged.cs" />
+    <Compile Include="Controls\HotkeyControl.xaml.cs">
+      <DependentUpon>HotkeyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Numeric.xaml.cs">
+      <DependentUpon>Numeric.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesynthLogic.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Syntgoht.cs" />
+    <Compile Include="Models\Hotkeys\ATBHotkeysModel.cs" />
+    <Compile Include="Utilities\ActivateWindow.cs" />
+    <Compile Include="Utilities\HotkeyManager.cs" />
+    <Compile Include="Utilities\Logger.cs" />
+    <Compile Include="Models\Settings\BaseModel.cs" />
+    <Compile Include="Models\Settings\MainSettingsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Utilities\FormManager.cs" />
+    <Compile Include="Utilities\Enums.cs" />
+    <Compile Include="Utilities\Extensions\GameObjectExtensions.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\HotkeysViewModel.cs" />
+    <Compile Include="ViewModels\OverlayViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Views\Hotkeys.xaml.cs">
+      <DependentUpon>Hotkeys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainSettings.xaml.cs">
+      <DependentUpon>MainSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SyntgohtWindow.xaml.cs">
+      <DependentUpon>SyntgohtWindow.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Controls\HotkeyControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Numeric.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Views\Hotkeys.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SyntgohtWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\BaseColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\BlueTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\GreenTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\SyntgohtStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\PinkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\RedTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\YellowTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libraries\RebornBuddy.exe" />
+    <Content Include="Libraries\Siune.Client.dll" />
+    <Resource Include="Properties\version.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>DEL "$(SolutionDir)Builds\Syntgoht"
+MD "$(SolutionDir)Builds\Syntgoht"
+
+SET buildtype=Debug
+
+if  $(ConfigurationName) == Release (
+SET buildtype=Release)
+
+COPY "$(SolutionDir)Syntgoht\bin\%25buildtype%25\Syntgoht.dll" "$(SolutionDir)Builds\Syntgoht\Syntgoht.dll"
+COPY "$(SolutionDir)SyntgohtLoader\SyntgohtLoader.cs" "$(SolutionDir)Builds\Syntgoht\SyntgohtLoader.cs"
+COPY "$(SolutionDir)Syntgoht\Libraries\Siune.Client.dll" "$(SolutionDir)Builds\Syntgoht\Siune.Client.dll"
+COPY "$(SolutionDir)Syntgoht\bin\%25buildtype%25\RestSharp.dll" "$(SolutionDir)Builds\Syntgoht\RestSharp.dll"
+COPY "$(SolutionDir)Syntgoht\bin\%25buildtype%25\TrelloNet.dll" "$(SolutionDir)Builds\Syntgoht\TrelloNet.dll"
+COPY "$(SolutionDir)Syntgoht\Properties\version.txt" "$(SolutionDir)Builds\Syntgoht\version.txt"
+
+start XCOPY "$(SolutionDir)Builds\Syntgoht" "C:\Users\Omni\Game Data\RB64\Botbases\Syntgoht" /D /E /C /R /I /K /Y
+start XCOPY "$(SolutionDir)Builds\Syntgoht" "C:\Users\Omni\Game Data\RB32\Botbases\Syntgoht" /D /E /C /R /I /K /Y
+
+if  $(ConfigurationName) == Release (
+echo Protecting Soution!
+
+dotNET_Reactor.exe -project "$(SolutionDir)Builds\Syntgoht.nrproj"  
+
+DEL "$(SolutionDir)Builds\Syntgoht\Siune.Client.dll"
+DEL "$(SolutionDir)Builds\Syntgoht\*.hash"
+
+start XCOPY "$(SolutionDir)Builds\Syntgoht" "C:\Users\Omni\Game Data\RB64\Botbases\Syntgoht" /D /E /C /R /I /K /Y
+start XCOPY "$(SolutionDir)Builds\Syntgoht" "C:\Users\Omni\Game Data\RB32\Botbases\Syntgoht" /D /E /C /R /I /K /Y
+
+cd "$(SolutionDir)Builds"
+
+"c:\Program Files\7-Zip\7z.exe" a "Syntgoht.zip" Syntgoht\
+
+start XCOPY "$(SolutionDir)Builds\Syntgoht.zip" "C:\Users\Omni\Documents\Visual Studio 2017\Projects\Omniverse\SVN" /D /E /C /R /I /K /Y
+start XCOPY "$(SolutionDir)Builds\Syntgoht.zip" "C:\Users\Omni\Documents\SourceTree\Omnicode" /D /E /C /R /I /K /Y
+start XCOPY "$(SolutionDir)Builds\Syntgoht" "C:\Users\Omni\Documents\Visual Studio 2017\Projects\Omniverse\SVN\Syntgoht" /D /E /C /R /I /K /Y
+start XCOPY "$(SolutionDir)Builds\Syntgoht" "C:\Users\Omni\Documents\SourceTree\Omnicode\Syntgoht" /D /E /C /R /I /K /Y
+cd "C:\Users\Omni\Documents\Visual Studio 2017\Projects\Omniverse\SVN"
+
+TortoiseProc.exe /command:commit /path:"C:\Users\Omni\Documents\Visual Studio 2017\Projects\Omniverse\SVN" /logmsg:"Syntgoht SVN Update: " /closeonend:0)
+
+exit</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

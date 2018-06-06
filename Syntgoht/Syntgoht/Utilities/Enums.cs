@@ -1,0 +1,3 @@
+﻿namespace Syntgoht.Utilities
+{
+}
