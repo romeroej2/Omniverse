@@ -49,8 +49,6 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Style="{DynamicResource ATBTrelloButton}" Click="TrelloLink" ToolTip="Click to open ATB's issue tracker." />
-                    <Button Style="{DynamicResource ATBExportSettingsButton}" Click="TrelloReport" ToolTip="Click to Submit an Error Report" />
                     <Button Style="{DynamicResource ATBCloseButton}" Click="Close" />
                 </StackPanel>
             </Grid>

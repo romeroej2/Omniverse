@@ -17,8 +17,6 @@ namespace BokoLoader
 {
     public class BokoLoader : BotPlugin
     {
-        // Change these settings to reflect your project!
-        private const int ProjectId = 19;
 
         private const string ProjectName = "Boko";
         private const string ProjectMainType = "Boko.BokoPlugin";
@@ -34,19 +32,9 @@ namespace BokoLoader
         private static readonly string ProjectAssembly = Path.Combine(Environment.CurrentDirectory, $@"Plugins\{ProjectName}\{ProjectAssemblyName}");
         private static readonly string GreyMagicAssembly = Path.Combine(Environment.CurrentDirectory, @"GreyMagic.dll");
         private static readonly string VersionPath = Path.Combine(Environment.CurrentDirectory, $@"Plugins\{ProjectName}\version.txt");
-        private static readonly string BaseDir = Path.Combine(Environment.CurrentDirectory, $@"Plugins\{ProjectName}");
-        private static readonly string ProjectTypeFolder = Path.Combine(Environment.CurrentDirectory, @"Plugins");
-        private static bool _updaterStarted, _updaterFinished, _loaded;
+        private static bool _loaded;
 
-        public BokoLoader()
-        {
-            if (_updaterStarted) { return; }
-            _updaterStarted = true;
-
-            Task.Factory.StartNew(AutoUpdate);
-        }
-
-        private static object Product { get; set; }
+       private static object Product { get; set; }
 
         private static MethodInfo InitFunc { get; set; }
         private static MethodInfo ButtonFunc { get; set; }
@@ -62,37 +50,37 @@ namespace BokoLoader
 
         public override void OnInitialize()
         {
-            if (!_loaded && Product == null && _updaterFinished) { LoadProduct(); }
+            if (!_loaded && Product == null ) { LoadProduct(); }
             if (Product != null) { InitFunc.Invoke(Product, null); }
         }
 
         public override void OnButtonPress()
         {
-            if (!_loaded && Product == null && _updaterFinished) { LoadProduct(); }
+            if (!_loaded && Product == null ) { LoadProduct(); }
             if (Product != null) { ButtonFunc.Invoke(Product, null); }
         }
 
         public override void OnPulse()
         {
-            if (!_loaded && Product == null && _updaterFinished) { LoadProduct(); }
+            if (!_loaded && Product == null ) { LoadProduct(); }
             if (Product != null) { PulseFunc.Invoke(Product, null); }
         }
 
         public override void OnEnabled()
         {
-            if (!_loaded && Product == null && _updaterFinished) { LoadProduct(); }
+            if (!_loaded && Product == null ) { LoadProduct(); }
             if (Product != null) { EnabledFunc.Invoke(Product, null); }
         }
 
         public override void OnDisabled()
         {
-            if (!_loaded && Product == null && _updaterFinished) { LoadProduct(); }
+            if (!_loaded && Product == null ) { LoadProduct(); }
             if (Product != null) { DisabledFunc.Invoke(Product, null); }
         }
 
         public override void OnShutdown()
         {
-            if (!_loaded && Product == null && _updaterFinished) { LoadProduct(); }
+            if (!_loaded && Product == null ) { LoadProduct(); }
             if (Product != null) { ShutDownFunc.Invoke(Product, null); }
         }
 
@@ -246,131 +234,6 @@ namespace BokoLoader
         {
             message = "[Auto-Updater][" + ProjectName + "] " + message;
             Logging.Write(LogColor, message);
-        }
-
-        private static string GetLocalVersion()
-        {
-            if (!File.Exists(VersionPath)) { return null; }
-            try
-            {
-                var version = File.ReadAllText(VersionPath);
-                return version;
-            }
-            catch { return null; }
-        }
-
-        private static void AutoUpdate()
-        {
-            var stopwatch = Stopwatch.StartNew();
-            var local = GetLocalVersion();
-
-            var message = new VersionMessage { LocalVersion = local, ProductId = ProjectId };
-            var responseMessage = GetLatestVersion(message).Result;
-
-            var latest = responseMessage.LatestVersion;
-
-            if (local == latest || latest == null)
-            {
-                _updaterFinished = true;
-                LoadProduct();
-                return;
-            }
-
-            Log($"Updating to version {latest}.");
-            var bytes = responseMessage.Data;
-            if (bytes == null || bytes.Length == 0) { return; }
-
-            if (!Clean(BaseDir))
-            {
-                Log("Could not clean directory for update.");
-                _updaterFinished = true;
-                return;
-            }
-
-            Log("Extracting new files.");
-            if (!Extract(bytes, ProjectTypeFolder))
-            {
-                Log("Could not extract new files.");
-                _updaterFinished = true;
-                return;
-            }
-
-            if (File.Exists(VersionPath)) { File.Delete(VersionPath); }
-            try { File.WriteAllText(VersionPath, latest); }
-            catch (Exception e) { Log(e.ToString()); }
-
-            stopwatch.Stop();
-            Log($"Update complete in {stopwatch.ElapsedMilliseconds} ms.");
-            _updaterFinished = true;
-            LoadProduct();
-        }
-
-        private static bool Clean(string directory)
-        {
-            foreach (var file in new DirectoryInfo(directory).GetFiles())
-            {
-                try { file.Delete(); }
-                catch { return false; }
-            }
-
-            foreach (var dir in new DirectoryInfo(directory).GetDirectories())
-            {
-                try { dir.Delete(true); }
-                catch { return false; }
-            }
-
-            return true;
-        }
-
-        private static bool Extract(byte[] files, string directory)
-        {
-            using (var stream = new MemoryStream(files))
-            {
-                var zip = new FastZip();
-
-                try { zip.ExtractZip(stream, directory, FastZip.Overwrite.Always, null, null, null, false, true); }
-                catch (Exception e)
-                {
-                    Log(e.ToString());
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private static async Task<VersionMessage> GetLatestVersion(VersionMessage message)
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("https://api.omniverse.tech");
-
-                var json = JsonConvert.SerializeObject(message);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                HttpResponseMessage response;
-                try
-                {
-                    response = await client.PostAsync("/api/products/version", content);
-                }
-                catch (Exception e)
-                {
-                    Log(e.Message);
-                    return null;
-                }
-
-                var contents = await response.Content.ReadAsStringAsync();
-                var responseObject = JsonConvert.DeserializeObject<VersionMessage>(contents);
-                return responseObject;
-            }
-        }
-
-        private class VersionMessage
-        {
-            public int ProductId { get; set; }
-            public string LocalVersion { get; set; }
-            public string LatestVersion { get; set; }
-            public byte[] Data { get; set; } = new byte[0];
         }
     }
 }

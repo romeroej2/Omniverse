@@ -1,7 +1,0 @@
-General:
-+ Added option to disable toast messages.
---- This will ***NOT*** affect warning type messages (IE: Raid Warnings or Authentication issues.)
-+ Added option to hide overlay when ATB is running.
-+ Modified warning messages to include the Avert Eyes spell name being cast.
---- Also added the debuff name to look for before resuming combat.
-+ Tweaked Overlay a bit to look a tad nicer

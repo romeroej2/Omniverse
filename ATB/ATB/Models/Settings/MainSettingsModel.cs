@@ -10,7 +10,6 @@ using System.Linq;
 using System.Windows.Input;
 using ATB.ViewModels;
 using ATB.Utilities.Extensions;
-using TrelloNet;
 
 namespace ATB.Models
 {
@@ -32,11 +31,7 @@ namespace ATB.Models
         private double _overlayWidth, _overlayHeight, _overlayX, _overlayY, _overlayOpacity;
 
         private float _maxTargetDistance;
-
-        private string _trelloToken;
-
-        private Token _trelloTokenData;
-
+        
         [Setting]
         [DefaultValue(false)]
         public bool AutoDutyNotify
@@ -151,16 +146,6 @@ namespace ATB.Models
         [DefaultValue(75)]
         public int OverlayFontSize
         { get { return _overlayFontSize; } set { _overlayFontSize = value; OverlayViewModel.Instance.OverlaySize = value; OnPropertyChanged(); } }
-
-        [Setting]
-        [DefaultValue("")]
-        public string TrelloToken
-        { get { return _trelloToken; } set { _trelloToken = value; OnPropertyChanged(); } }
-
-        [Setting]
-        [DefaultValue(null)]
-        public Token TrelloTokenData
-        { get { return _trelloTokenData; } set { _trelloTokenData = value; OnPropertyChanged(); } }
 
         [Setting]
         [DefaultValue(true)]

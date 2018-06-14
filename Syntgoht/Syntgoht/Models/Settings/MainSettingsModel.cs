@@ -2,7 +2,6 @@
 using ff14bot.Objects;
 using System.ComponentModel;
 using System.Configuration;
-using TrelloNet;
 
 namespace Syntgoht.Models
 {
@@ -17,10 +16,6 @@ namespace Syntgoht.Models
         }
 
         private bool usePause;
-
-        private string trelloToken;
-
-        private Token trelloTokenData;
 
         [Setting]
         [DefaultValue(6000)]
@@ -38,16 +33,6 @@ namespace Syntgoht.Models
         [DefaultValue(false)]
         public bool UsePause
         { get { return usePause; } set { usePause = value; OnPropertyChanged(); } }
-
-        [Setting]
-        [DefaultValue("")]
-        public string TrelloToken
-        { get { return trelloToken; } set { trelloToken = value; OnPropertyChanged(); } }
-
-        [Setting]
-        [DefaultValue(null)]
-        public Token TrelloTokenData
-        { get { return trelloTokenData; } set { trelloTokenData = value; OnPropertyChanged(); } }
 
         private SelectedTheme _selectedTheme;
 

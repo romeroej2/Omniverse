@@ -20,7 +20,7 @@ namespace Boko
     {
         private static DateTime _pulseLimiter, _pulseLimiterInInstance;
         private static bool _initialized, _inInstance;
-        private static readonly string VersionPath = Path.Combine(Environment.CurrentDirectory, @"Plugins\Boko\version.txt");
+        //private static readonly string VersionPath = Path.Combine(Environment.CurrentDirectory, @"Plugins\Boko\version.txt");
 
         public BokoPlugin()
         {
@@ -40,7 +40,8 @@ namespace Boko
         {
             TreeRoot.OnStart += OnBotStart;
             TreeRoot.OnStop += OnBotStop;
-            Logger.BokoLog($"Initializing Version: {File.ReadAllText(VersionPath)}");
+            //Logger.BokoLog($"Initializing Version: {File.ReadAllText(VersionPath)}");
+            Logger.BokoLog($"Initializing Version: GitHub 1.0.0");
 
             FormManager.SaveFormInstances();
             _initialized = true;

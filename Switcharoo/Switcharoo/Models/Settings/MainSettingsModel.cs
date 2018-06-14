@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Linq;
-using TrelloNet;
 
 namespace Switcharoo.Models
 {
@@ -23,10 +22,6 @@ namespace Switcharoo.Models
         private string _preferedArcanistRoutine, _preferedSummonerRoutine, _preferedScholarRoutine, _preferedBardRoutine, _preferedWhiteMageRoutine, _preferedPaladinRoutine,
             _preferedDragoonRoutine, _preferedWarriorRoutine, _preferedMonkRoutine, _preferedNinjaRoutine, _preferedBlankMageRoutine, _preferedMachinistRoutine,
             _preferedDarkKnightRoutine, _preferedAstrologianRoutine, _preferedDoHlRoutine, _preferedRedMageRoutine, _preferedSamuraiRoutine;
-
-        private string _trelloToken;
-
-        private Token _trelloTokenData;
 
         #region Prefered Routines
 
@@ -99,16 +94,6 @@ namespace Switcharoo.Models
         { get { return _preferedSamuraiRoutine; } set { _preferedSamuraiRoutine = value; OnPropertyChanged(); } }
 
         #endregion Prefered Routines
-
-        [Setting]
-        [DefaultValue("")]
-        public string TrelloToken
-        { get { return _trelloToken; } set { _trelloToken = value; OnPropertyChanged(); } }
-
-        [Setting]
-        [DefaultValue(null)]
-        public Token TrelloTokenData
-        { get { return _trelloTokenData; } set { _trelloTokenData = value; OnPropertyChanged(); } }
 
         [JsonIgnore]
         private List<string> _combatRoutineList;

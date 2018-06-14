@@ -50,8 +50,6 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Style="{DynamicResource BokoTrelloButton}" Click="TrelloLink" ToolTip="Click to open ATB's issue tracker." />
-                    <Button Style="{DynamicResource BokoExportSettingsButton}" Click="ExportSettings" ToolTip="Click to Submit an Error Report" />
                     <Button Style="{DynamicResource BokoCloseButton}" Click="Close" />
                 </StackPanel>
             </Grid>

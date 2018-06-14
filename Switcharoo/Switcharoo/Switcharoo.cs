@@ -42,7 +42,8 @@ namespace Switcharoo
             TreeRoot.OnStop += OnBotStop;
             RoutineManager.PickRoutineFired += RoutinePickFired;
 
-            Logger.SwitcharooLog($"Initializing Version: {File.ReadAllText(VersionPath)}");
+            //Logger.SwitcharooLog($"Initializing Version: {File.ReadAllText(VersionPath)}");
+            Logger.SwitcharooLog($"Initializing Version: GitHub 1.0.0");
             FormManager.SaveFormInstances();
             _initialized = true;
         }
