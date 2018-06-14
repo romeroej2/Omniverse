@@ -1,17 +1,11 @@
 ﻿using ff14bot.AClasses;
 using ff14bot.Helpers;
-using ICSharpCode.SharpZipLib.Zip;
 using System;
-using System.Diagnostics;
 using System.IO;
-using System.Net.Http;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 using Clio.Utilities;
-using Newtonsoft.Json;
 
 namespace BokoLoader
 {
@@ -25,16 +19,17 @@ namespace BokoLoader
         public override string Description => "Combat Chocobo Manager.";
         public override string Author => "Omninewb";
         public override string ButtonText => "Settings";
-        public override Version Version => new Version($"{File.ReadAllText(VersionPath)}");
+        //public override Version Version => new Version($"{File.ReadAllText(VersionPath)}");
+        public override Version Version => new Version("1.0.0");
         public override bool WantButton => true;
 
         private static readonly object Locker = new object();
         private static readonly string ProjectAssembly = Path.Combine(Environment.CurrentDirectory, $@"Plugins\{ProjectName}\{ProjectAssemblyName}");
         private static readonly string GreyMagicAssembly = Path.Combine(Environment.CurrentDirectory, @"GreyMagic.dll");
-        private static readonly string VersionPath = Path.Combine(Environment.CurrentDirectory, $@"Plugins\{ProjectName}\version.txt");
+        //private static readonly string VersionPath = Path.Combine(Environment.CurrentDirectory, $@"Plugins\{ProjectName}\version.txt");
         private static bool _loaded;
 
-       private static object Product { get; set; }
+        private static object Product { get; set; }
 
         private static MethodInfo InitFunc { get; set; }
         private static MethodInfo ButtonFunc { get; set; }
@@ -50,37 +45,37 @@ namespace BokoLoader
 
         public override void OnInitialize()
         {
-            if (!_loaded && Product == null ) { LoadProduct(); }
+            if (!_loaded && Product == null) { LoadProduct(); }
             if (Product != null) { InitFunc.Invoke(Product, null); }
         }
 
         public override void OnButtonPress()
         {
-            if (!_loaded && Product == null ) { LoadProduct(); }
+            if (!_loaded && Product == null) { LoadProduct(); }
             if (Product != null) { ButtonFunc.Invoke(Product, null); }
         }
 
         public override void OnPulse()
         {
-            if (!_loaded && Product == null ) { LoadProduct(); }
+            if (!_loaded && Product == null) { LoadProduct(); }
             if (Product != null) { PulseFunc.Invoke(Product, null); }
         }
 
         public override void OnEnabled()
         {
-            if (!_loaded && Product == null ) { LoadProduct(); }
+            if (!_loaded && Product == null) { LoadProduct(); }
             if (Product != null) { EnabledFunc.Invoke(Product, null); }
         }
 
         public override void OnDisabled()
         {
-            if (!_loaded && Product == null ) { LoadProduct(); }
+            if (!_loaded && Product == null) { LoadProduct(); }
             if (Product != null) { DisabledFunc.Invoke(Product, null); }
         }
 
         public override void OnShutdown()
         {
-            if (!_loaded && Product == null ) { LoadProduct(); }
+            if (!_loaded && Product == null) { LoadProduct(); }
             if (Product != null) { ShutDownFunc.Invoke(Product, null); }
         }
 
