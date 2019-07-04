@@ -98,6 +98,7 @@ namespace ATB
             if (DateTime.Now < _pulseLimiter) return true;
             _pulseLimiter = DateTime.Now.AddSeconds(3);
 
+            AutoDuty.AutoSprint();
             AutoDuty.AutoDutyRoot();
             FormManager.SaveFormInstances();
 
