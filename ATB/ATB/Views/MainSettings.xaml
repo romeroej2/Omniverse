@@ -35,6 +35,7 @@
                     <CheckBox Content="Auto-Face" Margin="1" Style="{DynamicResource ATBCheckbox}" IsChecked="{Binding Settings.UseAutoFace, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <CheckBox Content="Auto-Dialog" Margin="1" Style="{DynamicResource ATBCheckbox}" IsChecked="{Binding Settings.UseAutoTalk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <CheckBox Content="Auto-Target" Margin="1" Style="{DynamicResource ATBCheckbox}" IsChecked="{Binding Settings.UseAutoTargeting, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <CheckBox Content="Sticky-Target" Margin="1" Style="{DynamicResource ATBCheckbox}" IsChecked="{Binding Settings.UseStickyTargeting, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <!--<CheckBox Content="Auto-TPS Adjust" Margin="1" Style="{DynamicResource ATBCheckbox}" IsChecked="{Binding Settings.UseAutoTpsAdjust, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
                     <CheckBox Content="Enable Overlay" Margin="1" Style="{DynamicResource ATBCheckbox}" IsChecked="{Binding Settings.UseOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
                     <CheckBox Content="Output to Chatbox" Margin="1" Style="{DynamicResource ATBCheckbox}" IsChecked="{Binding Settings.UseOutputToEcho, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />

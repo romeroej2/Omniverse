@@ -32,6 +32,9 @@ namespace ATB.Utilities
         {
             if (!MainSettingsModel.Instance.UseAutoTargeting || MainSettingsModel.Instance.AutoTargetSelection == AutoTargetSelection.None) return false;
 
+            if (MainSettingsModel.Instance.UseStickyTargeting && Core.Player.HasTarget)
+                return false;
+
             switch (MainSettingsModel.Instance.AutoTargetSelection)
             {
                 case AutoTargetSelection.NearestEnemy:
